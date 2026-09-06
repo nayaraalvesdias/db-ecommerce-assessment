@@ -1,0 +1,5 @@
+-- CREATE TRIGGER trigger_name
+--     AFTER UPDATE
+--     ON order_items
+--     FOR EACH statement
+-- EXECUTE FUNCTION decrease_stock();

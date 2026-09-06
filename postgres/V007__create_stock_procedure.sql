@@ -1,0 +1,16 @@
+-- CREATE OR REPLACE FUNCTION decrease_stock()
+--     RETURNS TRIGGER
+-- AS $$
+-- DECLARE
+--     stock_quantity integer;
+-- BEGIN
+--     new.order_items.
+--         select
+--
+--         SELECT stock INTO stock_quantity from products where id = new.product_id;
+--
+--         UPDATE products
+--         SET stock = stock_quantity - new.products.quantity
+--         WHERE id = new.product_id;
+-- END;
+-- $$ language plpgsql;
