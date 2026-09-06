@@ -1,2 +1,2 @@
-ALTER TABLE products
-RENAME COLUMN quantity TO stock;
+alter table products
+rename column quantity to stock;

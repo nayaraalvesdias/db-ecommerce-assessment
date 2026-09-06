@@ -1,5 +1,5 @@
--- CREATE TRIGGER trigger_name
---     AFTER UPDATE
---     ON order_items
---     FOR EACH statement
--- EXECUTE FUNCTION decrease_stock();
+create trigger trigger_name
+    after update
+    on order_items
+    for each row
+execute function decrease_stock();
