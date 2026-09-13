@@ -58,3 +58,27 @@ select customer_id from orders where status = 'PLACED'
 except
 -- except, intersect and union
 select customer_id from orders  where status = 'CANCELED'
+
+
+-- query to identify orders with completed but without payment
+
+select
+    order_id,
+    case
+           when order_transactions.status = 'WAITING_PAYMENT' then 'PENDING'
+           else order_transactions.status
+    end as transaction_status,
+    orders.status
+from orders
+join order_transactions on order_transactions.order_id = orders.id
+where orders.status = 'COMPLETED' and order_transactions.status != 'PAID'
+
+-- query to get total revenue by day
+
+select
+    date(created_at),
+    count(*) as order_quantity,
+    sum(total) as revenue
+from orders
+where status = 'COMPLETED'
+group by date(created_at)
